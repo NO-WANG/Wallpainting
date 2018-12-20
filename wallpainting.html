@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>wallpainting</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+		<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+		<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<!--[if lt IE 9]>
+         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+         <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+      <![endif]-->
+		<link rel="stylesheet" href="css/carousel-caption.css" type="text/css" />
+		<script src="js/dropdownopen.js"></script>
+		<link rel="stylesheet" href="css/divFooter.css" type="text/css" />
+
+	</head>
+
+	<body>
+
+		<div id="myCarousel" class="carousel slide" data-ride="carousel">
+			<!-- 轮播（Carousel）指标 -->
+			<!--圆圈按钮
+				<ol class="carousel-indicators">
+				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+				<li data-target="#myCarousel" data-slide-to="1"></li>
+				<li data-target="#myCarousel" data-slide-to="2"></li>
+			</ol>
+           -->
+			<!-- 轮播（Carousel）项目 -->
+			<div class="carousel-inner" role="listbox">
+
+				<div class="item active">
+					<a href="projectone.html">
+						<img src="img/firstpicture.jpg" alt="First slide">
+						<div class="carousel-caption" contenteditable="true">first</div>
+					</a>
+				</div>
+				<div class="item">
+					<a href="projecttwo.html">
+						<img src="img/secondpicture.jpg" alt="Second slide">
+						<div class="carousel-caption" contenteditable="true">second</div>
+					</a>
+				</div>
+				<div class="item">
+					<a href="projectthree.html">
+						<img src="img/thirdpicture.jpg" alt="Third slide">
+						<div class="carousel-caption" contenteditable="true">third</div>
+					</a>
+				</div>
+			</div>
+			<!-- 轮播（Carousel）导航 -->
+			<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+				<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+				<span class="sr-only">Previous</span>
+			</a>
+			<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+				<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+				<span class="sr-only">Next</span>
+			</a>
+		</div>
+
+		<div class="navbar navbar-default" role="navigation">
+			<div class="container">
+				<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#">网站导航</a>
+				</div>
+				<div class="collapse navbar-collapse" id="navbar-main">
+					<ul class="nav navbar-nav">
+						<li>
+							<a href="wallpainting.html">首页</a>
+						</li>
+						<li>
+							<a href="projectshow.html">项目展示</a>
+						</li>
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#">产品介绍
+								<span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu">
+								<li>
+									<a href="projectone.html">墙体绘画</a>
+								</li>
+								<li>
+									<a href="projecttwo.html">室内设计</a>
+								</li>
+								<li>
+									<a href="projectthree.html">绘画基础</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="faqs.html">常见问题</a>
+						</li>
+						<li>
+							<a href="aboutus.html">关于我们</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div id="showinf" class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
+			展示信息
+			<canvas id="mycanvasone" width="3000" height="0" style="border:5px solid #9FCDFF;">
+                您的浏览器不支持 HTML5 canvas 标签。
+           </canvas>
+			<script>
+				var c = document.getElementById("mycanvasone");
+				var ctx = c.getContext("2d");
+				ctx.beginPath();
+				ctx.lineCap = "round";
+				ctx.moveTo(20, 40);
+				ctx.lineTo(200, 40);
+				ctx.stroke();
+			</script>
+			
+			
+			<div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
+				<div class="col-md-6  col-xs-6 col-lg-6 col-sm-6">
+					<canvas id="myCanvas1" width="500" height="300" style="border:2px solid #FD7E14;">
+                       您的浏览器不支持 HTML5 canvas 标签。
+                </canvas>
+					<script type="text/javascript">
+						function drawBeauty(beauty) {
+							var mycv = document.getElementById("myCanvas1");
+							var myctx = mycv.getContext("2d");
+							myctx.drawImage(beauty, 0, 0);
+						}
+
+						function load() {
+							var beauty = new Image();
+							beauty.src = "img/firstpicture.jpg";
+							if(beauty.complete) {
+								drawBeauty(beauty);
+							} else {
+								beauty.onload = function() {
+									drawBeauty(beauty);
+								};
+								beauty.onerror = function() {
+									window.alert('图片加载失败，请重试');
+								};
+							};
+						} //load
+						if(document.all) {
+							window.attachEvent('onload', load);
+						} else {
+							window.addEventListener('load', load, false);
+						}
+					</script>
+				</div>
+
+				<div class="col-md-6  col-xs-6 col-lg-6 col-sm-6">
+					<p>这里是解释图片的话</p>
+				</div>
+			</div>
+
+			<canvas id="mycanvasone" width="3000" height="0" style="border:5px solid #9FCDFF;">
+                您的浏览器不支持 HTML5 canvas 标签。
+           </canvas>
+
+			<div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
+				<div class="col-md-6  col-xs-6 col-lg-6 col-sm-6">
+					<canvas id="myCanvas2" width="500" height="300" style="border:2px solid #FD7E14;">
+                       您的浏览器不支持 HTML5 canvas 标签。
+                     </canvas>
+					<script>
+						var c = document.getElementById("myCanvas2");
+						var ctx = c.getContext("2d");
+						var img = new Image();
+						img.src = "img/secondpicture.jpg";
+						img.onload = function() {
+							ctx.drawImage(img, 10, 10);
+						}
+					</script>
+				</div>
+				<div class="col-md-6  col-xs-6 col-lg-6 col-sm-6">
+					<h3>我们的标题</h3>
+					<p>文字<br />这里是解释图片的话</p>
+				</div>
+			</div>
+
+		</div>
+
+		<footer id="divFooter" class="col-md-12 col-lg-12 col-xs-12 col-sm-12">
+			<div class="container">
+				<div class="row rowLinkLogo">
+					<div class="clo-md-3 clo-xs-4 col-sm-3 col-lg-3 leftLink">
+						<ul>
+							<li>
+								<a href="wallpainting.html">产品概况</a>
+							</li>
+							<li>
+								<a href="projectshow.html">产品展示</a>
+							</li>
+							<li>
+								<a href="faqs.html">常见问题</a>
+							</li>
+							<li>
+								<a href="aboutus.html">联系我们</a>
+							</li>
+						</ul>
+					</div>
+					<div class="col-md-6 col-xs-4  col-sm-6  col-lg-6 centerLogo">
+						<center>
+							<img class="img-responsive" src="img/网站logo.JPG" />
+						</center>
+						<p>电话号码 | 固定电话
+							<br>
+							<a href="#">wangxiang2284@126.com</a>
+						</p>
+					</div>
+					<div class="col-md-3 col-xs-4 col-sm-3 col-lg-3 rightLink">
+						<ul>
+							<li>
+								<a href="#">右边信息</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="divCopyright">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12 col-xs-12 col-sm-12  col-lg-12">
+							<center>地址：湖南省张家界市子午路 | 版权所有：王翔</center>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+	</body>
+
+</html>

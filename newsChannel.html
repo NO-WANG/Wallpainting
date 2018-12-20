@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>测试新的页面</title>
+
+		<link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+		<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+		<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script src="js/dropdownopen.js"></script>
+		<link href="css/scrollNotice.css" type="text/css" rel="stylesheet" />
+		<script src="js/intervalSwitching.js"></script>
+		<link href="css/hotNews.css" type="text/css" rel="stylesheet" />
+		<link href="css/texthidden.css" type="text/css" rel="stylesheet" />
+		<script src="js/textHidden.js"></script>
+		<link rel="stylesheet" href="css/divFooter.css" type="text/css" />
+
+		<!--
+        	作者：wangxiang2284@126.com
+        	时间：2018-11-24
+        	描述：引用font awesome
+       -->
+		<link rel="stylesheet" href="bootstrap-dist/css/font-awesome.min.css" />
+
+	</head>
+
+	<body>
+
+		<nav class="navbar navbar-default navbar-fixer-top" role="navigation">
+			<div class="container" style="color: #FFFFFF;">
+				<ul class="nav navbar-nav navbar-left">
+					<li>
+						<a href="#">
+							<span class="glyphicon glyphicon-home"></span> &nbsp;&nbsp;设为主页
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="glyphicon glyphicon-star"></span> &nbsp;&nbsp;收藏本站
+						</a>
+					</li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li>
+						<a href="#" data-toggle="modal" data-target="#userLoginModal">
+							<span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;登录
+						</a>
+					</li>
+					<li>
+						<a href="#" data-toggle="modal" data-target="#userRegisterModal">
+							<span class="glyphicon glyphicon-edit"></span>&nbsp;&nbsp;注册
+						</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+
+		<!--
+	作者：wangxiang2284@126.com
+	时间：2018-11-24
+	描述：为什么这个弹窗不能弹出来
+	是在不行就复制代码修改。反正他们都是差不多代码。指不定就是指示错误！
+-->
+		<div class="modal fade" id="userLoginModal" role="dialog" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<form id="formUserLogin" class="form-horizontal">
+						<div class="modal-header">
+							<input type="button" value="&times;" class="close" data-dismiss="modal" aria-hidden="true"></input>
+							<h4 class="modal-title">
+                             	<span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;用户登录
+                             </h4>
+						</div>
+
+						<div class="modal-body">
+							<p>
+								<input type="text" class="form-control" placeholder="用户名/手机号/邮箱账号" />
+							</p>
+							<p>
+								<input type="password" class="form-control" placeholder="密码" />
+							</p>
+							<p>
+								<label class="checkbox-inline">
+								<input type="checkbox" />十天内免登录
+							</label>
+							</p>
+						</div>
+						<div class="modal-footer">
+							<input type="button" class="btn btn-success" value="登&nbsp;录" />
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<div class="modal fade" id="userRegisterModal" role="dialog" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<input type="button" value="&times;" class="close" data-dismiss="modal" aria-hidden="ture" />
+						<h4 class="modal-title">
+							<span class="glyphicon glyphicon-edit"></span>&nbsp;&nbsp;用户注册</h4>
+					</div>
+
+					<div class="modal-body">
+						<div class="row">
+							<div class="userRegisterText">用户名</div>
+							<div class="userRegisterInput">
+								<input type="text" class="form-control" name="username" />
+								<p class="userRegisterNotice">6~18个字符，可使用字母、数字、下划线，需要用字母开头</p>
+							</div>
+						</div>
+						<div class="row">
+							<div class="userRegisterText">密码 </div>
+							<div class="userRegisterInput">
+								<input type="password" class="form-control" />
+								<p class="userRegisterNotice">6~16个字符，区分大小写</p>
+							</div>
+						</div>
+						<div class="row">
+							<div class="userRegisterText">确认密码 </div>
+							<div class="userRegisterInput">
+								<input type="password" class="form-control" />
+								<p class="userRegisterNotice">再次输入密码</p>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="userRegisterText">Email</div>
+							<div class="userRegisterInput">
+								<input type="password" class="form-control" />
+								<p class="userRegisterNotice">Email格式：xxx@xxx.com</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="modal-footer">
+						<input type="submit" class="btn btn-success" value="立即注册" />
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-5 col-xs-12">
+					<img src="img/网站logo.JPG" alt="wang" class="img-responsive">
+				</div>
+				<div class="col-sm-7 col-xs-12" style="padding: 2.5% 0;">
+					<form id="frmSeach" action="#">
+						<div class="input-group">
+							<input type="text" class="form-control" placeholder="请输入关键字进行站内搜索">
+							<span class="input-group-btn">
+								<input type="submit" class="btn btn-default" value="搜索"/>
+							</span>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<div class="navbar navbar-default" role="navigation">
+			<div class="container">
+				<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#">网站导航</a>
+				</div>
+				<!--
+                	作者：offline
+                	时间：2018-11-04
+                	描述：把剩下的选项放进容器
+                -->
+				<div class="collapse navbar-collapse" id="navbar-main">
+
+					<ul class="nav navbar-nav">
+						<li>
+							<a href="default.html">首页</a>
+						</li>
+						<li>
+							<a href="#">项目展示</a>
+						</li>
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#">产品介绍
+								<span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu">
+								<li>
+									<a href="#">墙体绘画</a>
+								</li>
+								<li>
+									<a href="#">室内设计</a>
+								</li>
+								<li>
+									<a href="#">绘画基础</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="#">常见问题</a>
+						</li>
+						<li>
+							<a href="#">关于我们</a>
+						</li>
+						<!--
+                	作者：offline
+                	时间：2018-11-04
+                	描述：增加一级导航只需如上添加li标记
+                -->
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="row">
+				<div class="col-md-9 col-xs-9 col-sm-9 col-lg-9">
+					<div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
+						<div class="scrollNotice">
+
+							<div id="noticeTip">通知公告</div>
+							<ul>
+								<li>
+									<a href="#">
+										<span class="glyphicon glyphicon-volume-up"></span>&nbsp;通知1：这个是我用到的js效果
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<span class="glyphicon glyphicon-volume-up"></span>&nbsp;通知2：emmm
+									</a>
+								</li>
+							</ul>
+						</div>
+
+					</div>
+					<div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
+						<div class="panel panel-primary">
+							<div class="panel-heading">
+								<h3 class="panel-title">
+									<span class="glyphicon glyphicon-hand-right"></span>&nbsp;&nbsp;当前位置：新闻资讯
+								</h3>
+							</div>
+							<div class="panel-body">
+								<div class="media">
+									<a class="pull-left" href="#">
+										<img src="img/测试背景图.jpg" class="img-thumbnail" alt="..." />
+									</a>
+									<div class="panel-body">
+										<h4 class="media-heading">
+											<a href="#">新闻咨询标题</a>
+										</h4>
+										<p>新闻咨询简要内容</p>
+									</div>
+								</div>
+
+								<div class="media">
+									<a class="pull-left" href="#">
+										<img src="img/测试背景图.jpg" class="img-thumbnail" alt="..." />
+									</a>
+									<div class="panel-body">
+										<h4 class="media-heading">
+											<a href="#">测试标题</a>
+										</h4>
+										<p>乱七八糟简要内容</p>
+									</div>
+								</div>
+								<!--
+	作者：wangxiang2284@126.com
+	时间：2018-11-24
+	描述：复制可以继续增加内容
+-->
+							</div>
+							<div class="panel-footer">
+								<ul class="pagination pagination-sm">
+									<li>
+										<a href="#">首页</a>
+									</li>
+									<li>
+										<a href="#">上一页</a>
+									</li>
+									<li class="active">
+										<a href="#">1</a>
+									</li>
+									<li class="disabled">
+										<a href="#">2</a>
+									</li>
+									<li>
+										<a href="#">3</a>
+									</li>
+									<li>
+										<a href="#">4</a>
+									</li>
+									<li>
+										<a href="#">5</a>
+									</li>
+									<li>
+										<a href="#">下一页</a>
+									</li>
+									<li>
+										<a href="#">尾页</a>
+									</li>
+								</ul>
+								<!--
+                                	作者：wangxiang2284@126.com
+                                	时间：2018-11-24
+                                	描述：另外一种翻页方式
+                                	<ul class="pager">
+                                	<li><a href="#">上一页</a></li>
+                                	<li><a href="#">下一页</a></li>
+                                </ul>
+                                -->
+
+							</div>
+						</div>
+
+					</div>
+				</div>
+
+				<div class="col-md-3 col-xs-3 col-sm-3 col-lg-3">
+					<div class="row">
+						<div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
+							<div class="panel panel-primary" id="hotNews">
+								<div class="panel-heading">
+									<h3 class="panel-title">
+										<span class="icon-eye-open"></span>&nbsp;&nbsp;最热新闻
+									</h3>
+								</div>
+								<ul class="list-group">
+									<a href="#" target="_blank" class="list-group-item">
+										<span class="badge pull-left badgertop3">1</span>&nbsp;&nbsp;最热新闻标题1
+									</a>
+									<a href="#" target="_blank" class="list-group-item">
+										<span class="badge pull-left badgertop3">2</span>&nbsp;&nbsp;最热新闻标题22
+									</a>
+									<a href="#" target="_blank" class="list-group-item">
+										<span class="badge pull-left badgertop3">3</span>&nbsp;&nbsp;最热新闻标题333
+									</a>
+									<!--
+                                    	作者：wangxiang2284@126.com
+                                    	时间：2018-11-24
+                                    	描述：复制可以增加
+                                    -->
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
+							<div class="panel panel-primary">
+								<div class="panel-heading">
+									<h3 class="panel-title">
+									<a href="#" class="pull-right">更多...</a>
+									<span class="fa fa-thumbs-o-up"></span>&nbsp;&nbsp;精彩评论
+								</h3>
+								</div>
+
+								<div class="panel-group" id="accordion">
+
+									<div class="panel">
+										<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" class="list-group-item">现在是测试此页面的第一个信息</a>
+										<div id="collapseOne" class="panel-collapse collapse in">
+											<div class="panel-body">
+												<a class="list-group-item">
+													<span class="fa fa-comment"></span>&nbsp;精彩评论
+												</a>
+												<a class="list-group-item">
+													<span class="fa fa-comment"></span>&nbsp;精彩评论
+												</a>
+											</div>
+										</div>
+									</div>
+
+									<div class="panel">
+										<a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" class="list-group-item">另外一个测试此页面的信息</a>
+										<div id="collapseTwo" class="panel-collapse collapse">
+											<div class="panel-body">
+												<a class="list-group-item">
+													<span class="fa fa-comment"></span>&nbsp;精彩评论
+												</a>
+												<a class="list-group-item">
+													<span class="fa fa-comment"></span>&nbsp;精彩评论
+												</a>
+											</div>
+										</div>
+									</div>
+
+									<div class="panel">
+										<button data-toggle="collapse" data-target="#demo" class="btn btn-default collapsed">触发按钮</button>
+										<div id="demo" class="collapse in">
+											<div class="panel-body">
+												<a class="list-group-item">
+													<span class="fa fa-comment"></span>&nbsp;精彩评论
+												</a>
+												<a class="list-group-item">
+													<span class="fa fa-comment"></span>&nbsp;精彩评论
+												</a>
+											</div>
+										</div>
+
+									</div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
+							<div class="panel panel-primary">
+								<div class="panel-heading">
+									<h3 class="panel-title">
+									<span class="glyphicon glyphicon-road"></span>&nbsp;&nbsp;这是一个教育平台
+								</h3>
+								</div>
+
+								<ul class="list-group" id="ulPEPlatform">
+									<li class="list-group-item">
+										<a href="#" target="_blank">
+											<span class="fa fa-mortar-board fa-2x pull-left"></span>随便测试1
+										</a>
+										<div class="divPicText">
+											<p>这是一个文字解释部分，看需要添加</p>
+										</div>
+									</li>
+									<li class="list-group-item">
+										<a href="#" target="_blank">
+											<span class="fa fa-mortar-board fa-2x pull-left"></span>随便测试22
+										</a>
+										<div class="divPicText">
+											<p>这是一个文字解释部分</p>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<footer id="divFooter">
+			<div class="container">
+				<div class="row rowLinkLogo">
+					<div class="clo-md-3 clo-xs-4 col-sm-3 col-lg-3 leftLink">
+						<ul>
+							<li>
+								<a herf="#">产品概况</a>
+							</li>
+							<li>
+								<a herf="#">产品展示</a>
+							</li>
+							<li>
+								<a herf="#">常见问题</a>
+							</li>
+							<li>
+								<a herf="#">联系我们</a>
+							</li>
+						</ul>
+					</div>
+					<div class="col-md-6 col-xs-4  col-sm-6  col-lg-6 centerLogo">
+						<center>
+							<img class="img-responsive" src="img/网站logo.JPG" />
+						</center>
+						<p>电话号码 | 固定电话
+							<br>
+							<a href="#">wangxiang2284@126.com</a>
+						</p>
+					</div>
+					<div class="col-md-3 col-xs-4 col-sm-3 col-lg-3 rightLink">
+						<ul>
+							<li>
+								<a href="#">右边信息</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="divCopyright">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12 col-xs-12 col-sm-12  col-lg-12">
+							<center>地址：湖南省张家界市子午路 | 版权所有：王翔</center>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</footer>
+	</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>第一个项目</title>
+		<link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+		<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+		<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+		<link href="css/testing.css" rel="stylesheet" type="text/css" />
+	</head>
+
+	<body>
+		<p>第一个展示项目</p>
+		<div id="btnSide">展开侧边栏</div>
+		<div id="divSide">
+			<span id="clsSide" class="glyphicon glyphicon-remove"></span>
+		</div>
+		<script>
+			$(document).ready(function() {
+				$('#btnSide').click(function() {
+					$('#divSide').css({
+						left: '0px'
+					});
+				});
+			})
+		</script>
+
+	</body>
+
+</html>
